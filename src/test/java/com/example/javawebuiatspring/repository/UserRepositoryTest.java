@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ class UserRepositoryTest {
         List<User> users = prepareTestData();
         List<User> savedUsers = userRepository.saveAll(users);
 
-        User george = userRepository.getOne(5L);
+        User george = userRepository.getOne(savedUsers.get(4).getId());
         Assertions.assertEquals("Георгий", george.getName());
 
         List<User> allByAgeBetween20and25 = userRepository.findAllByAgeBetween(20, 25);
