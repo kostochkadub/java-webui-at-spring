@@ -23,8 +23,6 @@ public class WordService {
         ResultAggregator resultAggregator = new ResultAggregator();
         HashMap<String, Long> hashmap = resultAggregator.getHashMapFromStringArray(actualTextArray);
 
-        jsonSerializerHashMapStringLong.serialize(hashmap, "testJsonDune.json");
-
         return hashmap;
     }
 }

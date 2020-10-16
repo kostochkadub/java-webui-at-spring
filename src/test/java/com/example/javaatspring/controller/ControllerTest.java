@@ -42,6 +42,5 @@ class ControllerTest {
         Assertions.assertNotNull(responseBookAsString);
         Assertions.assertTrue(responseBookAsString.equals("{\"его\":1,\"текстфайл\":1,\"тестов\":1,\"приведет\":1," +
                 "\"падению\":1,\"тестовый\":1,\"изменение\":1,\"это\":1,\"к\":1}"));
-        System.out.println("asd");
     }
 }
