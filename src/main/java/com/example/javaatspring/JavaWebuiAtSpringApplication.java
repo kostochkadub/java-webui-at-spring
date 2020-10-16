@@ -1,4 +1,4 @@
-package com.example.javawebuiatspring;
+package com.example.javaatspring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,4 +9,5 @@ public class JavaWebuiAtSpringApplication {
     public static void main(String[] args) {
         SpringApplication.run(JavaWebuiAtSpringApplication.class, args);
     }
+
 }
