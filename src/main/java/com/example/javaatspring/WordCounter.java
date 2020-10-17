@@ -1,5 +1,8 @@
 package com.example.javaatspring;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class WordCounter {
 
     public WordCounter() {

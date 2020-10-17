@@ -1,19 +1,18 @@
 package com.example.javaatspring.service;
 
+import com.example.javaatspring.FileProcessor;
+import com.example.javaatspring.WordCounter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import javax.validation.constraints.NotNull;
-import java.io.File;
 import java.util.HashMap;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class WordServiceTest {
 
     @Test
     void getBookWords() {
-        WordService wordService = new WordService();
+        WordService wordService = new WordService(new FileProcessor(), new WordCounter());
 
         HashMap<String, Long> bookWords = wordService.getBookWords("src/test/java/com/example/javaatspring/repository/testText");
 

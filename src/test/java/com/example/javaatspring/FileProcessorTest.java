@@ -10,7 +10,7 @@ class FileProcessorTest {
     @Test
     void readLineByLineJava8() {
         String text = fileProcessor.readLineByLineJava8("src/test/java/com/example/javaatspring/repository/testText");
-        Assertions.assertEquals("Это тестовый текст-файл. Его изменение приведет к падению тестов!\n",text);
+        Assertions.assertEquals("Это тестовый текст-файл. Его изменение приведет к падению тестов!\n", text);
     }
 
     @Test

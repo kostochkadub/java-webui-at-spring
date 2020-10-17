@@ -1,9 +1,9 @@
 package com.example.javaatspring;
 
-import com.sun.istack.NotNull;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import javax.validation.constraints.NotNull;
 import java.util.HashMap;
 
 class ResultAggregatorTest {
@@ -15,9 +15,9 @@ class ResultAggregatorTest {
         String[] testTextArray = getStrings();
         HashMap<String, Long> expectedHashmap = getStringLongHashMap();
 
-        HashMap<String,Long> actualHashmap = resultAggregator.getHashMapFromStringArray(testTextArray);
+        HashMap<String, Long> actualHashmap = resultAggregator.getHashMapFromStringArray(testTextArray);
 
-        Assertions.assertEquals(expectedHashmap,actualHashmap);
+        Assertions.assertEquals(expectedHashmap, actualHashmap);
     }
 
     @Test
@@ -27,7 +27,7 @@ class ResultAggregatorTest {
         testTextArray[0] = "Хрень";
 
         HashMap<String, Long> expectedHashmap = getStringLongHashMap();
-        HashMap<String,Long> actualHashmap = resultAggregator.getHashMapFromStringArray(testTextArray);
+        HashMap<String, Long> actualHashmap = resultAggregator.getHashMapFromStringArray(testTextArray);
 
         Assertions.assertTrue(!expectedHashmap.equals(actualHashmap));
     }
@@ -40,7 +40,7 @@ class ResultAggregatorTest {
 
     @NotNull
     private HashMap<String, Long> getStringLongHashMap() {
-        HashMap<String,Long> expectedHashmap = new HashMap<>();
+        HashMap<String, Long> expectedHashmap = new HashMap<>();
         expectedHashmap.put("i", 2l);
         expectedHashmap.put("am", 1l);
         expectedHashmap.put("grout", 3l);

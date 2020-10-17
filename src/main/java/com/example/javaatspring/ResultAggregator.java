@@ -1,27 +1,10 @@
 package com.example.javaatspring;
 
-import java.util.HashMap;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 
 public class ResultAggregator {
     // который принимаетString[] words и возвращает WordCountResult, в котором лежит обобщенный результат в виде Map
-
-    public HashMap<String, Long> getHashMapFromStringArray(String[] words) {
-        HashMap<String, Long> wordCountResult = new HashMap<>();
-        for (int i = 0; i < words.length; i++) {
-            Long frequency = wordCountResult.get(words[i]);
-            wordCountResult.put(words[i], frequency == null ? 1L : frequency + 1L);
-        }
-        wordCountResult = (HashMap<String, Long>) sortByComparator(wordCountResult, false);
-        wordCountResult.remove(""); //удаляем пустые значения
-        return wordCountResult;
-    }
 
     //Спасибо coderoad.ru
     private static Map<String, Long> sortByComparator(Map<String, Long> unsortMap, final boolean order) {
@@ -48,6 +31,17 @@ public class ResultAggregator {
         }
 
         return sortedMap;
+    }
+
+    public HashMap<String, Long> getHashMapFromStringArray(String[] words) {
+        HashMap<String, Long> wordCountResult = new HashMap<>();
+        for (int i = 0; i < words.length; i++) {
+            Long frequency = wordCountResult.get(words[i]);
+            wordCountResult.put(words[i], frequency == null ? 1L : frequency + 1L);
+        }
+        wordCountResult = (HashMap<String, Long>) sortByComparator(wordCountResult, false);
+        wordCountResult.remove(""); //удаляем пустые значения
+        return wordCountResult;
     }
 
 

@@ -3,14 +3,12 @@ package com.example.javaatspring.serializer;
 import com.example.javaatspring.FileProcessor;
 import com.example.javaatspring.ResultAggregator;
 import com.example.javaatspring.WordCounter;
-import com.sun.istack.NotNull;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import javax.validation.constraints.NotNull;
 import java.io.File;
 import java.util.HashMap;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class JsonSerializerHashMapStringLongTest {
 
@@ -21,7 +19,7 @@ class JsonSerializerHashMapStringLongTest {
 
         ResultAggregator resultAggregator = new ResultAggregator();
         String[] testTextArray = getStrings();
-        HashMap<String,Long> hashmap = resultAggregator.getHashMapFromStringArray(testTextArray);
+        HashMap<String, Long> hashmap = resultAggregator.getHashMapFromStringArray(testTextArray);
 
         jsonSerializerHashMapStringLong.serialize(hashmap, "testJson.json");
         File file = new File("testJson.json");
@@ -39,7 +37,7 @@ class JsonSerializerHashMapStringLongTest {
 
         ResultAggregator resultAggregator = new ResultAggregator();
 
-        HashMap<String,Long> hashmap = resultAggregator.getHashMapFromStringArray(actualTextArray);
+        HashMap<String, Long> hashmap = resultAggregator.getHashMapFromStringArray(actualTextArray);
 
         jsonSerializerHashMapStringLong.serialize(hashmap, "testJsonDune.json");
         File file = new File("testJsonDune.json");
